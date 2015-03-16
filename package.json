@@ -14,10 +14,10 @@
   "less": "less/flat-ui.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/designmodo/Flat-UI.git"
+    "url": "https://github.com/nonphotoblue22/FlatCore-UI"
   },
   "bugs": {
-    "url": "https://github.com/designmodo/Flat-UI/issues"
+    "url": "https://github.com/nonphotoblue22/FlatCore-UI/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

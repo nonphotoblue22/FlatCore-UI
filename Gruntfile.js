@@ -21,6 +21,13 @@ module.exports = function (grunt) {
             ' */\n',
 
     // Task configuration.
+    assemble: {
+      option {
+
+      }
+
+    }
+
     clean: {
       dist: ['dist']
     },
@@ -304,14 +311,17 @@ module.exports = function (grunt) {
   // Test task.
   grunt.registerTask('test', ['csslint', 'jshint', 'jscs']);
 
-  // JS distribution task.
+  // JS prep-distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
-  // CSS distribution task.
+  // CSS prep-distribution task.
   grunt.registerTask('dist-css', ['less', 'autoprefixer', 'usebanner', 'csscomb', 'cssmin']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', ['copy:docsVendorJS']);
+
+  // HTML prep-distribution task goes here (assemble)
+  // grunt.registerTask('dist-assemble', ['assemble'])
 
   // Copy files to dist.
   grunt.registerTask('dist-copy', ['copy:dist', 'copy:distVendorJS', 'copy:distVendorCSS', 'copy:distTemplate']);

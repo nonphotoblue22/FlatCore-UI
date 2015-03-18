@@ -20,13 +20,6 @@ module.exports = function (grunt) {
             ' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' */\n',
 
-    // Task configuration.
-    assemble: {
-      option {
-
-      }
-
-    }
 
     clean: {
       dist: ['dist']
@@ -276,6 +269,23 @@ module.exports = function (grunt) {
       }
     },
 
+    // Assemble Task configuration.
+    assemble: {
+      options: {
+        layout: 'index.hbs',
+        layoutdir: 'templates/layouts/',
+        partials: 'templates/partials/**/*.hbs'
+      },
+      pages: {
+        // look for pages in pages directory + place them in hrp directory
+        files: {
+          'herp/': ['templates/pages/*.hbs']
+        }
+
+      }
+
+    },
+
     connect: {
       options: {
         port: 9007,
@@ -305,7 +315,7 @@ module.exports = function (grunt) {
   });
 
   // These plugins provide necessary tasks.
-  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
+  require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble']});
   require('time-grunt')(grunt);
 
   // Test task.
@@ -321,7 +331,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', ['copy:docsVendorJS']);
 
   // HTML prep-distribution task goes here (assemble)
-  // grunt.registerTask('dist-assemble', ['assemble'])
+  grunt.registerTask('dist-assemble', ['assemble']);
 
   // Copy files to dist.
   grunt.registerTask('dist-copy', ['copy:dist', 'copy:distVendorJS', 'copy:distVendorCSS', 'copy:distTemplate']);

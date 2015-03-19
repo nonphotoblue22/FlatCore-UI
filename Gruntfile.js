@@ -85,7 +85,7 @@ module.exports = function (grunt) {
           'js/*.js',
           '!js/application.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/assets/js/<%= pkg.name %>.js'
       }
     },
 
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/assets/js/<%= pkg.name %>.min.js'
       }
     },
 
@@ -106,10 +106,10 @@ module.exports = function (grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapFilename: 'dist/assets/css/<%= pkg.name %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+          'dist/assets/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
         }
       },
       compileDocs: {
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
         options: {
           map: true
         },
-        src: 'dist/css/<%= pkg.name %>.css'
+        src: 'dist/assets/css/<%= pkg.name %>.css'
       },
       assets: {
         src: ['docs/assets/css/docs.css', 'docs/assets/css/demo.css']
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
       },
       core: {
         files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css'
+          'dist/assets/css/<%= pkg.name %>.min.css': 'dist/assets/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -198,8 +198,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-            'dist/css/<%= pkg.name %>.css',
-            'dist/css/<%= pkg.name %>.min.css',
+            'dist/assets/css/<%= pkg.name %>.css',
+            'dist/assets/css/<%= pkg.name %>.min.css',
             'docs/assets/css/docs.css',
             'docs/assets/css/demo.css'
           ]
@@ -213,7 +213,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css'
+          'dist/assets/css/<%= pkg.name %>.css': 'dist/assets/css/<%= pkg.name %>.css'
         }
       },
       assets: {
@@ -231,7 +231,7 @@ module.exports = function (grunt) {
           'fonts/**',
           'img/**'
         ],
-        dest: 'dist/'
+        dest: 'dist/assets'
       },
       distTemplate: {
         src: 'docs/template.html',
@@ -249,7 +249,7 @@ module.exports = function (grunt) {
           'videojs/dist/video-js/video.js',
           'videojs/dist/video-js/video-js.swf'
         ],
-        dest: 'dist/js/vendor/'
+        dest: 'dist/assets/js/vendor/'
       },
       distVendorCSS: {
         expand: true,
@@ -258,7 +258,7 @@ module.exports = function (grunt) {
         src: [
           'bootstrap/dist/css/bootstrap.min.css'
         ],
-        dest: 'dist/css/vendor/'
+        dest: 'dist/assets/css/vendor/'
       },
       docsVendorJS: {
         expand: true,
@@ -333,17 +333,17 @@ module.exports = function (grunt) {
   // Docs distribution task.
   grunt.registerTask('dist-docs', ['copy:docsVendorJS']);
 
-  // HTML prep-distribution task goes here (assemble)
+  // HTML prep-distribution task goes here (assemble), extra task
   grunt.registerTask('dist-assemble', ['assemble']);
 
   // Copy files to dist.
-  grunt.registerTask('dist-copy', ['copy:dist', 'copy:distVendorJS', 'copy:distVendorCSS', 'copy:distTemplate']);
+  grunt.registerTask('dist-copy', ['copy:dist', 'copy:distVendorJS', 'copy:distVendorCSS', 'assemble:pages']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-copy', 'dist-js', 'dist-docs']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist']);
+  grunt.grunregisterTask('default', ['test', 'dist']);
 
   // Run server, run...
   grunt.registerTask('server', ['less', 'autoprefixer', 'connect:livereload', 'watch']);

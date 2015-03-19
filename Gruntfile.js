@@ -343,7 +343,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-copy', 'dist-js', 'dist-docs']);
 
   // Default task.
-  grunt.grunregisterTask('default', ['test', 'dist']);
+  grunt.registerTask('default', ['test', 'dist']);
 
   // Run server, run...
   grunt.registerTask('server', ['less', 'autoprefixer', 'connect:livereload', 'watch']);

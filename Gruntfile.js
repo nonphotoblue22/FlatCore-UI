@@ -277,9 +277,12 @@ module.exports = function (grunt) {
         partials: 'templates/partials/**/*.hbs'
       },
       pages: {
-        // look for pages in pages directory + place them in hrp directory
+        options: {
+          flatten: true
+        },
+        // look for pages in pages directory + place them in dist directory
         files: {
-          'herp/': ['templates/pages/*.hbs']
+          'dist/': ['templates/pages/*.hbs']
         }
 
       }

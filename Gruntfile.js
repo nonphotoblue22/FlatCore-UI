@@ -308,6 +308,10 @@ module.exports = function (grunt) {
         files: 'less/**/*.less',
         tasks: ['less', 'autoprefixer']
       },
+      templates: {
+        files: 'templates/**/*.hbs',
+        tasks: ['assemble']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'

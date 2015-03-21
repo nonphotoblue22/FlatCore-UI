@@ -1,1 +1,64 @@
 /* 320+ MAIN CSS */
+
+//hero.hbs template
+
+#lookstack-header {
+	position: relative;
+	height: 100vh;
+	background-image: url(../img/main_lookstack_bg.jpg);
+	background-origin: border-box;
+	background-position: -5px -5px;
+	overflow: hidden;
+
+	&:after {
+		content: " ";
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(04, 99, 155, 0.75);
+		z-index: 2;
+	}
+
+	.row {
+		position: absolute;
+		bottom: 1.25em;
+		width: 100%;
+		z-index: 3;
+	}
+
+	.btn {
+		max-width: 150px;
+		&:focus {
+			color: #000;
+		}
+	}
+
+	#video-background {
+		position: absolute;
+		top: -25%;
+		left: -25%;
+		z-index: 1;
+	}
+
+	.logo {
+		position: relative;
+		margin: 50% auto 0 auto;
+		max-width: 125px;
+		z-index: 3;
+		img {
+			width: 100%;
+		}
+	}
+
+}
+
+
+#lookstack-video-preview {
+	display: none;
+	iframe {
+		width: 100%;
+	}
+}

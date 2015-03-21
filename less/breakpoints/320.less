@@ -31,7 +31,7 @@
 
 	.btn {
 		max-width: 150px;
-		&:focus {
+		&:focus, &:hover {
 			color: #000;
 		}
 	}
@@ -64,8 +64,11 @@
 }
 
 // IE 6,7,8 Quick hax for hero.hbs
-html.ie6, html.ie7, html.ie8, html.ie9 {
+html.ie6, html.ie7, html.ie8, html.ie9, html.ie10 {
 	#lookstack-header {
 		height: 480px!important;
+		video {
+			display: none;
+		}
 	}
 }

@@ -1,37 +1,38 @@
 ---
 title: 'Log In'
 layout: form-flow.hbs
+page-class: 'log-in'
 ---
 </head>
-<body>
+<body class="{{ page-class }}">
 
 {{> log-in-navbar }}
 
-<div class="container">
+<div class="container" id="container">
 	<h6 class="demo-panel-title">My Account</h6>
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-xs-12">
 			<div class="form-group">
 				<input type="text" value="" placeholder="Email" class="form-control" />
 			</div>
 		</div>
 	</div> <!-- /row -->
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-xs-12">
 			<div class="form-group">
 				<input type="text" value="" placeholder="Password" class="form-control" />
 			</div>
 		</div>
 	</div> <!-- /row -->
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-xs-12">
 			<div class="form-group">
 				<input type="text" value="" placeholder="Confirm Password" class="form-control" />
 			</div>
 		</div>
 	</div> <!-- /row -->
 	<div class="row" id="sign-in-row">
-		<div class="col-xs-6">
+		<div class="col-xs-6 col-xs-offset-3">
 			<a href="#fakelink" class="btn btn-lg center-block btn-inverse">Get Started</a>
 		</div>
 	</div>

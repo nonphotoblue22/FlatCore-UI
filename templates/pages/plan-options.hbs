@@ -19,19 +19,19 @@ page-class: 'plan-options'
 	<div class="row">
 		<div class="col-xs-12">
 			<form id="sign-up-options" action="" method="post">
-				<div class="option">
+				<div class="row option-row">
 					<label class="share-label" for="six-months">6 months - $2.99 / mo</label>
 					<input data-toggle="switch" checked type="radio" name="purchase-plan" value="six-months">
 				</div>
-				<div class="option">
+				<div class="row option-row">
 					<label class="share-label" for="three-months">3 months - $3.99 / mo</label>
 					<input data-toggle="switch" type="radio" name="purchase-plan" value="three-months">
 				</div>
-				<div class="option">
+				<div class="row option-row">
 					<label class="share-label" for="single-month">1 months - $4.99 / mo</label>
 					<input data-toggle="switch" type="radio" name="purchase-plan" value="single-month">
 				</div>
-				<div class="option">
+				<div class="row option-row">
 					<label class="share-label" for="free-trial">Free Trial</label>
 					<input data-toggle="switch" type="radio" name="purchase-plan" value="free-trial">
 				</div>
@@ -48,12 +48,12 @@ page-class: 'plan-options'
 <script>
 	// Switches
 	var options = {
-		onText: "Yes",
-		onColor: 'primary',
-		offColor: 'ghost',
-		offText: " ",
 		animate: true,
-		inverse: true
+		inverse: true,
+		onColor: 'payment',
+		offColor: 'greyscale',
+		onText: "&#10003;",
+		offText: " "
 
 		//disabled: true
 	};

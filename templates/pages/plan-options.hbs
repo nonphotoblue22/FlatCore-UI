@@ -47,18 +47,16 @@ page-class: 'plan-options'
 <script src="assets/js/flat-ui.js"></script>
 <script>
 	// Switches
-	var options = {
+	var switchOptions = {
 		animate: true,
 		inverse: true,
 		onColor: 'payment',
 		offColor: 'greyscale',
 		onText: "&#10003;",
 		offText: " "
-
-		//disabled: true
 	};
 
 	if ($('[data-toggle="switch"]').length) {
-		$('[data-toggle="switch"]').bootstrapSwitch(options);
+		$('[data-toggle="switch"]').bootstrapSwitch(switchOptions);
 	}
 </script>

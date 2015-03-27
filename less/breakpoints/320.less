@@ -154,9 +154,16 @@ h6.demo-panel-title {
 	min-height: inherit;
 	height: 65px;
 	li {
-		margin: 10px 0 0 10px;
+		margin: 5px 0 0 0;
 		display: inline-block;
 		list-style: none;
+	}
+	.navbar-toggle {
+		margin: 0 0 0 25px;
+		padding: 0;
+		&:before {
+			color: #3d3d3d;
+		}
 	}
 	.icon-logo {
 		position: absolute;
@@ -172,6 +179,24 @@ h6.demo-panel-title {
 	}
 
 }
+
+body.main {
+	overflow-x: hidden;
+	#wrapper.active {
+		position: relative;
+		left: 80%;
+	}
+}
+
+.offcanvas-options {
+	width: 80%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
 
 .main-desktop-sidebar {
 	display: none;

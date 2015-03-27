@@ -10,7 +10,7 @@ page-class: 'main'
 	<header>
 		<nav class="navbar" role="navigation">
 				<li>
-					<a class="btn btn-info" href="#collapse-filter" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-filter">!!!</a>
+					<a class="navbar-toggle" data-toggle="offcanvas" aria-expanded="false" aria-controls="collapse-filter"></a>
 				</li>
 				<li>
 					<a class="btn btn-info" href="#my-account" id="my-account-cta">my account</a>
@@ -19,7 +19,6 @@ page-class: 'main'
 				<img src="assets/img/LeoKing_logo.png" alt="main_logo.png" />
 			</div>
 		</nav>
-		{{> user-filter-container }}
 	</header>
 
 	{{> desktop-sidebar }}
@@ -40,25 +39,32 @@ page-class: 'main'
 		</div>
 	</div>
 </div><!-- /.end-wrapper -->
+{{> user-filter-container }}
 
 <script src="assets/js/flat-ui.js"></script>
 <script>
-// Switches
-var options = {
-	animate: true,
-	inverse: true,
-	onColor: 'payment',
-	offColor: 'greyscale',
-	onText: "&#10003;",
-	offText: " "
 
-	//disabled: true
-};
+$(document).ready(function () {
+	// Switches
+	var options = {
+		animate: true,
+		inverse: true,
+		onColor: 'payment',
+		offColor: 'greyscale',
+		onText: "&#10003;",
+		offText: " "
 
-if ($('[data-toggle="switch"]').length) {
-	$('[data-toggle="switch"]').bootstrapSwitch(options);
-}
+		//disabled: true
+	};
 
-// $('.collapse-filter').collapse()
+	if ($('[data-toggle="switch"]').length) {
+		$('[data-toggle="switch"]').bootstrapSwitch(options);
+	}
+
+	// off canvas
+	$('[data-toggle="offcanvas"]').click(function () {
+		$('#wrapper').toggleClass('active')
+	});
+});
 
 </script>

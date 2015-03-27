@@ -128,7 +128,7 @@ h6.demo-panel-title {
 		input[type="submit"] {
 			border: 1px solid @silver;
 			&:hover {
-				cursor: pointer;	
+				cursor: pointer;
 			}
 		}
 	}
@@ -142,7 +142,40 @@ h6.demo-panel-title {
 	}
 }
 
+//main.hbs template
 
+#my-account-cta {
+	display: none;
+}
+
+.main .navbar {
+	position: relative;
+	border-bottom: 1px solid #DADADA;
+	min-height: inherit;
+	height: 65px;
+	li {
+		margin: 10px 0 0 10px;
+		display: inline-block;
+		list-style: none;
+	}
+	.icon-logo {
+		position: absolute;
+		top: 0;
+		left: calc(50% - 35px);
+		max-height: 75px;
+		display: block;
+		max-width: 70px;
+		padding-top: 8px;
+		img {
+			width: 100%;
+		}
+	}
+
+}
+
+.main-desktop-sidebar {
+	display: none;
+}
 
 // IE 6,7,8 Quick hax for hero.hbs
 html.ie6, html.ie7, html.ie8, html.ie9, html.ie10 {

@@ -7,22 +7,18 @@ page-class: 'main'
 </head>
 <body class="{{ page-class }}">
 <div id="wrapper">
-	<header class="row">
-		<div class="col-xs-12">
-			<nav class="navbar" role="navigation">
-				<ul role="menu" class="menu">
-					<li>
-						<a class="btn btn-primary" href="#collapse-filter" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-filter"></a>
-					</li>
-					<li>
-						<a class="btn btn-primary" href="#my-account">my account</a>
-					</li>
-				</ul>
-				<div class="icon-logo center-block">
-					<img src="assets/img/LeoKing_logo.png" alt="main_logo.png" />
-				</div>
-			</nav>
-		</div><!-- col -->
+	<header>
+		<nav class="navbar" role="navigation">
+				<li>
+					<a class="btn btn-info" href="#collapse-filter" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-filter">!!!</a>
+				</li>
+				<li>
+					<a class="btn btn-info" href="#my-account" id="my-account-cta">my account</a>
+				</li>
+			<div class="icon-logo center-block">
+				<img src="assets/img/LeoKing_logo.png" alt="main_logo.png" />
+			</div>
+		</nav>
 		{{> user-filter-container }}
 	</header>
 

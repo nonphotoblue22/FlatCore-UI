@@ -185,7 +185,6 @@ h6.demo-panel-title {
 	}
 
 
-
 	header {
 		.icon-logo {
 			position: absolute;
@@ -200,6 +199,7 @@ h6.demo-panel-title {
 			}
 		}
 	}
+
 	li {
 		margin: 5px 0 0 0;
 		display: inline-block;
@@ -211,11 +211,15 @@ h6.demo-panel-title {
 		.offcanvas-menu {
 			display: block;
 		}
+		.close {
+			display: none;
+		}
 	}
 	// hide offcanvas menu
 	.offcanvas-menu {
 		display: none;
 		form {
+			clear: both;
 			padding: 0 15px;
 		}
 		a {
@@ -226,9 +230,24 @@ h6.demo-panel-title {
 			width: 150px;
 		}
 		a#account-link {
-			margin: 0;
+			padding-left: 0;
+			margin: 0 0 15px 0;
 			text-align: left;
 			border: none;
+		}
+		a.close {
+			color: #333;
+			width: 45px;
+			border: none;
+			text-align: center;
+			font-size: 2.15em;
+			opacity: 0.5;
+		}
+		.option-row {
+			padding: 15px 0;
+			.share-label {
+				width: 60%;
+			}
 		}
 	}
 	// hide navbar toggle

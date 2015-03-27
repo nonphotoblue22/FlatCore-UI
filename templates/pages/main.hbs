@@ -21,29 +21,7 @@ page-class: 'main'
 			</div>
 
 	</header>
-	<nav class="offcanvas-menu" role="navigation">
-		<a href="#" class="btn" id="account-link">My Account</a>
-		<form id="payment-options" action="" method="post">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="row option-row">
-						<label class="share-label" for="six-months">Filter A</label>
-						<input data-toggle="switch" checked type="checkbox" name="purchase-plan" value="six-months">
-					</div>
-					<div class="row option-row">
-						<label class="share-label" for="six-months">Filter B</label>
-						<input data-toggle="switch" checked type="checkbox" name="purchase-plan" value="six-months">
-					</div>
-					<div class="row option-row">
-						<label class="share-label" for="six-months">Filter C</label>
-						<input data-toggle="switch" checked type="checkbox" name="purchase-plan" value="six-months">
-					</div>
-				</div>
-			</div> <!-- /row -->
-		</form>
-		<a href="#" class="btn">Save Settings</a>
-	</nav><!-- offcanvas mobile menu -->
-
+	{{> user-filter-container }}
 	{{> desktop-sidebar }}
 
 	<div class="container" role="main">
@@ -82,41 +60,16 @@ $(document).ready(function () {
 		offColor: 'greyscale',
 		onText: "&#10003;",
 		offText: " "
-
-		//disabled: true
 	};
 
 	if ($('[data-toggle="switch"]').length) {
 		$('[data-toggle="switch"]').bootstrapSwitch(options);
 	}
 
-	// setting wrapper touch variable
-	var wrapperClose = false;
-
 	// off canvas toggle
 	$('[data-toggle="offcanvas"]').click(function () {
 		$('#wrapper').toggleClass('active');
-		// setting active
-		if ($('#wrapper').hasClass('active')) {
-			wrapperClose = true;
-			console.log(wrapperClose);
-		} else {
-			return false;
-		}
 	});
-
-	// enable function to close off canvas by clicking on #wrapper.active
-	$('#wrapper').click(function() {
-		event.preventDefault();
-
-		if ($('#wrapper').hasClass('active') && wrapperClose === true) {
-			console.log('click wrapper to close off-canvas menu!');
-			$('#wrapper').removeClass('active');
-		} else {
-			console.log('dang...');
-		}
-	});
-
 
 });
 

@@ -144,57 +144,135 @@ h6.demo-panel-title {
 
 //main.hbs template
 
+.main.js-enabled {
+	// hide menu at the footer of doc
+	.js-hide{
+		.offcanvas-menu {
+			display: none;
+		}
+	}
+	// show offcanvas menu
+	.offcanvas-menu {
+		display: block
+	}
+}
+
 #my-account-cta {
 	display: none;
 }
 
-.main .navbar {
-	position: relative;
-	border-bottom: 1px solid #DADADA;
-	min-height: inherit;
-	height: 65px;
+// .main base styles +
+// hiding blocks if .js-enabled hasn't been added
+.main {
+
+	#wrapper {
+		position: relative;
+	}
+
+	#wrapper.active {
+		left: 14em;
+		&:after {
+			display: block;
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 5;
+			background-color: rgba(0,0,0, .75);
+		}
+	}
+
+
+
+	header {
+		.icon-logo {
+			position: absolute;
+			top: 0;
+			left: calc(50% - 35px);
+			max-height: 75px;
+			display: block;
+			max-width: 70px;
+			padding-top: 8px;
+			img {
+				width: 100%;
+			}
+		}
+	}
 	li {
 		margin: 5px 0 0 0;
 		display: inline-block;
 		list-style: none;
 	}
+
+	// show menu at the footer of doc
+	.js-hide{
+		.offcanvas-menu {
+			display: block;
+		}
+	}
+	// hide offcanvas menu
+	.offcanvas-menu {
+		display: none;
+		form {
+			padding: 0 15px;
+		}
+		a {
+			color: #333;
+			margin: 15px;
+			display: block;
+			border: 1px solid #DADADA;
+			width: 150px;
+		}
+		a#account-link {
+			margin: 0;
+			text-align: left;
+			border: none;
+		}
+	}
+	// hide navbar toggle
 	.navbar-toggle {
+		display: none;
+	}
+
+}
+
+// .main js-enabled styles
+
+.main.js-enabled {
+
+	//hiding footer nave when js-enabled is on body!
+	.js-hide {
+		.offcanvas-menu {
+			display: none;
+		}
+	}
+
+	#outer-wrapper {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	nav.offcanvas-menu {
+		width: 14em;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: -14em;
+		overflow: hidden;
+	}
+
+	.navbar-toggle {
+		display: block;
 		margin: 0 0 0 25px;
 		padding: 0;
 		&:before {
 			color: #3d3d3d;
 		}
 	}
-	.icon-logo {
-		position: absolute;
-		top: 0;
-		left: calc(50% - 35px);
-		max-height: 75px;
-		display: block;
-		max-width: 70px;
-		padding-top: 8px;
-		img {
-			width: 100%;
-		}
-	}
 
-}
 
-body.main {
-	overflow-x: hidden;
-	#wrapper.active {
-		position: relative;
-		left: 80%;
-	}
-}
-
-.offcanvas-options {
-	width: 80%;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
 }
 
 

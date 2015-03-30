@@ -16,10 +16,65 @@
 
 	// main.hbs
 	.main {
+		#wrapper {
+			width: 70%;
+			float: left;
+			.container {
+				width: 100%;
+			}
+			footer {
+				display: block;
+			}
+		}
 		.recommended-content {
 			padding-bottom: 65px;
 			.col-sm-4 {
 				padding: 0;
+			}
+		}
+
+		footer {
+			display: none;
+		}
+	}
+
+	// desktop nav
+	.main.js-enabled {
+		#wrapper {
+			height: 100vh;
+			overflow: auto;
+			header {
+				height: 95px;
+			}
+		}
+		.offcanvas-menu {
+			display: none;
+		}
+	}
+
+
+	.main-desktop-sidebar {
+		border-right: 1px solid #DADADA;
+		display: block;
+		width: 30%;
+		height: 100vh;
+		float: left;
+		background-color: #f1f1f1;
+		max-width: 325px;
+		header {
+			position: relative;
+			display: block;
+			width: 100%;
+			border-bottom: 1px solid #DADADA;
+			height: 95px;
+			background: #fff;
+			.icon-logo {
+				top: 15px;
+			}
+		}
+		#herp {
+			li {
+				display: inherit;
 			}
 		}
 	}

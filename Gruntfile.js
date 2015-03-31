@@ -344,7 +344,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-copy', ['copy:dist', 'copy:distVendorJS', 'copy:distVendorCSS', 'assemble:pages']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-copy', 'dist-js', 'dist-docs']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-copy', 'dist-js']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);

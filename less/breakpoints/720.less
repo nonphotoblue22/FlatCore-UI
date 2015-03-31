@@ -23,9 +23,17 @@
 			margin-left: auto;
 			li {
 				margin: 25px 15px 0 0;
-				a {
+				a.btn {
+					color: #4D4D4D;
 					padding-left: 0;
 					font-weight: 500;
+					opacity: 1;
+					transition: opacity .2s;
+					&:hover,:focus {
+						color: inherit;
+						opacity: .7;
+						transition: opacity .2s;
+					}
 				}
 			}
 		}
@@ -155,7 +163,7 @@
 				padding-left: 0;
 			}
 			li {
-				width: 85%;
+				width: 75%;
 				margin: 0 auto;
 				padding-top: 15px;
 				display: inherit;

@@ -16,9 +16,27 @@
 
 	// main.hbs
 	.main {
+		header {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			li {
+				margin: 25px 15px 0 0;
+				a {
+					padding-left: 0;
+					font-weight: 500;
+				}
+			}
+		}
+
 		#wrapper {
 			width: 70%;
 			float: left;
+			// hide the navbar toggle and icon-logo
+			.offcanvas-toggle, .icon-logo {
+				display: none;
+			}
 			.container {
 				width: 100%;
 			}
@@ -26,6 +44,34 @@
 				display: block;
 			}
 		}
+
+		//style this nav yo!
+		#wrapper.active {
+			left: 0;
+			&:after {
+				display: none;
+			}
+			.offcanvas-menu {
+				display: block;
+			}
+
+			.container[role="main"] {
+				position: relative;
+				&:after {
+					display: block;
+					content: " ";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 5;
+					background-color: rgba(225,225,225, .5);
+				}
+			}
+		}
+
+
 		.recommended-content {
 			padding-bottom: 65px;
 			.col-sm-4 {
@@ -36,6 +82,14 @@
 		footer {
 			display: none;
 		}
+
+		// menu at the footer of doc styling
+		.js-hide{
+			.form#payment-options {
+				max-width: none;
+			}
+		}
+
 	}
 
 	// desktop nav
@@ -47,9 +101,29 @@
 				height: 95px;
 			}
 		}
-		.offcanvas-menu {
-			display: none;
+		#my-account-cta {
+			display: block;
 		}
+
+		nav.offcanvas-menu{
+			display: none;
+			width: 100%;
+			height: 75%;
+			position: relative;
+			top: 0;
+			left: 0;
+			.close{
+				display: none;
+			}
+			form{
+				width: 100%;
+				max-width: none;
+			}
+			#account-link {
+				display: none;
+			}
+		}
+
 	}
 
 

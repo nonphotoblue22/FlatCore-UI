@@ -167,6 +167,9 @@ h6.demo-panel-title {
 
 	#wrapper {
 		position: relative;
+		footer {
+			display: none;
+		}
 	}
 
 	#wrapper.active {
@@ -197,6 +200,9 @@ h6.demo-panel-title {
 			img {
 				width: 100%;
 			}
+		}
+		#filter-menu-cta a {
+			display: none;
 		}
 	}
 
@@ -327,5 +333,37 @@ html.ie6, html.ie7, html.ie8, html.ie9, html.ie10 {
 		video {
 			display: none;
 		}
+	}
+
+	//main.hbs template
+	.main.js-enabled {
+
+		//header quickfixes
+		#header {
+			.icon-logo {
+				position: absolute;
+				top: 0;
+				left: 45%;
+				max-height: 75px;
+				display: block;
+				max-width: 10%;
+				padding-top: 8px;
+				img {
+					width: 100%;
+				}
+			}
+			#filter-menu-cta a {
+				display: none;
+			}
+		}
+		//wrapper cover
+		#wrapper.active {
+			&:after {
+				z-index: 555;
+				background-color: #fff;
+				opacity: .5;
+			}
+		}
+
 	}
 }

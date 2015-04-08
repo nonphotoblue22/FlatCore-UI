@@ -9,13 +9,11 @@ And if you want to checkout the original project go here: [getting started page]
 
 ## Quick start
 
-Three quick start options are available:
-
-- [Download the latest release](https://github.com/designmodo/Flat-UI/archive/2.2.2.zip).
-- Clone the repo: `git clone https://github.com/designmodo/Flat-UI.git`.
-- Install with [Bower](http://bower.io): `bower install flat-ui`.
+Make sure you have grunt installed. if you don't, follow instructions [here](http://gruntjs.com/getting-started).
 
 Run `npm install` and `bower install` to install dependencies.
+
+Then run a `grunt dist`, and after wards `grunt server`.
 
 You can also read Designmodos's original Flat UI [getting started page](http://designmodo.github.io/Flat-UI/docs/getting-started.html) for information on the framework contents.
 
